@@ -45,7 +45,6 @@ function twitter() {
 }
 
 function song() {
-  console.log('song' + movieSong);
   if (movieSong !== '') {
     songArray = movieSong;
   } else if (!process.argv[3]) {
@@ -72,11 +71,9 @@ function song() {
 function movie() {
   if (movieSong != '') {
     movieSong = movieSong.trim().replace(' ', '+');
-    console.log(movieSong);
     movieName = movieSong;
 
 
-    console.log(movieName);
   } else if (!process.argv[3]) {
     movieName = 'Mr+Nobody';
   } else {
@@ -116,13 +113,10 @@ function random() {
       console.log(error);
     } else {
       var dataArr = data.split(',');
-      console.log(dataArr);
       userInput = dataArr[0];
       movieSong = dataArr[1];
       movieSong = movieSong.replace('"', ' ');
       movieSong = movieSong.replace('"', ' ');
-      console.log(userInput);
-      console.log(movieSong);
       liri();
     }
   });
